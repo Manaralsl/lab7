@@ -1,9 +1,10 @@
 ---
 title: "lab-07-simpsons.Rmd"
-author: "Musab Isah"
+author: Manar mansour
 date: "3 March 2021"
 output: pdf_document
 ---
+ID:2201002883
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -22,51 +23,58 @@ library(mosaicData)
 
 1.  
 ```{r whickam}
-
+?Whickham
 ```
     
 Your answer:
-
+observational , Because they notice a person's health status after a period of time
 2.  
 ```{r observations}
-
+nrow(Whickham)
 ```
 
 Your answer;
-
+obs 1314  
+Each row represents whether the person is alive or dead, is he a smoker or not, and how old he is
 3.  
 
 ```{r number_variables}
-
+names(Whickham)
 ```
 
-Your answer:  
+Your answer:  3 var , "outcome" "smoker"  "age"
 
 ```{r var_type}
-
+unique(Whickham$outcome)
+unique(Whickham$smoker)
+unique(Whickham$age)
 ```
 
-Your answer: 
+Your answer: alive dead,yes,no
 
 ```{r plot_outcome}
-
+ggplot(Whickham, aes(x = outcome)) +
+  geom_bar()
 ```
 
 
 ```{r plot_smoker}
-
+ggplot(Whickham, aes(x = smoker)) +
+  geom_bar()
 ```
 
 ```{r plot_age}
-
+ggplot(Whickham, aes(x = age)) +
+  geom_boxplot()
 ```
 
 
 4. 
 
 ```{r plot_smokeVSincome_1}
-
+ggplot(data=Whickham, aes(x=smoker, y=outcome, color=outcome)) + geom_bar(stat="identity") 
 ```
+ans: Their continued smoking will lead to their death
 
 Knit, commit, and push to github.
 
